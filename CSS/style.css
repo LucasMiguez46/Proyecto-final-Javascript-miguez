@@ -54,7 +54,7 @@ form , input, textarea, select , button , label{
     background-color: transparent;
     color:inherit;
     display: block;
-    /* (Opcional) */ appearance: none;
+    appearance: none;
 }
 
 body {
@@ -65,3 +65,31 @@ body {
 }
 
 /* ==Fin del Reseteo de formato== */
+/* ==Declaro posibles variables para CSS== */
+:root{
+
+  /* ==Colores personalizados== */
+  --body-color-primary: cornsilk;
+  --body-color-secundary: #a88b2b;
+  --negro: rgb(0, 0, 0);
+
+  /* ==font personalizados== */
+  --tipo-principal: 20px;
+  --tipo-secundario: 16px;
+  --tipo-h1: 25px;
+}
+/* ==Fin Declaro posibles variables para CSS== */
+
+
+body{
+  background-color:var(--body-color-primary);
+  font-size: 16px;
+}
+
+h1{
+  display: flex;
+  font-size: var(--tipo-h1);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}

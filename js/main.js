@@ -1,2 +1,2 @@
 //esto es un comentario
-alert("hola mundo!");
+// alert("hola mundo!");
