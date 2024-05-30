@@ -15,7 +15,7 @@
 <body>
     <!-- Inicio Head -->
     <head>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg extranav" data-bs-theme="dark">
             <div class="container-fluid ">
               <a class="text-light" href="#">Navbar</a>
 
@@ -55,6 +55,23 @@
     <main>
 
         <h1>Nuevo sitio web para Javascript</h1>
+
+
+        <section class="cuestionario">
+            <h2>Indique nombre y edad</h2>
+            <form class="formulario cuestionario-bg">
+            <div>
+                <label class="" for="name">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Ingresa tu Nombre" />
+            </div>
+            <div>
+                <label for="number">Edad</label>
+                <input type="text" id="edad" placeholder="Ingresa tu Edad" />
+            </div>
+
+            <button type="button" onclick="validarEdadYNombre()">Revisar</button>
+        </section>
+
         <!-- <h1>Texto</h1>
         <h2>Texto</h2>
         <h3>Texto</h3>

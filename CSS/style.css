@@ -83,7 +83,34 @@ body {
 
 body{
   background-color:var(--body-color-primary);
-  font-size: 16px;
+  font-size: var(--tipo-secundario)
+}
+
+.extranav{
+  display: flex;
+  background-color: rgb(0, 0, 0,0.5);
+  color: white;
+  font-size: var(--tipo-h1);
+
+  form{
+    max-width: 500px;
+
+    button{
+      font-size: var(--tipo-principal);
+      background-color: var(--body-color-primary);
+      width: 150px;
+    }
+  }
+
+  li a{
+    transition: 0.5s;
+    padding: 10px 5px;
+
+    &:hover{
+      background-color: green;
+      border-radius: 10px;
+    }
+  }
 }
 
 h1{
@@ -92,4 +119,52 @@ h1{
   padding: 20px;
   align-items: center;
   justify-content: center;
+}
+
+h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cuestionario{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  font-family: inherit;
+  font-size: var(--tipo-principal);
+  width: 100%;
+  /* background-color: var(--body-color-secundary); */
+
+  input, textarea{
+    background-color: var(--body-color-primary);
+      border-radius: 10px;
+      width: 100%;
+  }
+
+  input:focus, textarea:focus{
+      background-color:antiquewhite;
+  }
+
+  button{
+    padding: 10px;
+    background-color: aquamarine;
+    border-radius: 8px;
+  }
+}
+
+.cuestionario-bg{
+  background-color: var(--body-color-secundary);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+.formulario{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
