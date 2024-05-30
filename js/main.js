@@ -20,3 +20,24 @@ function validarEdadYNombre() {
 //     console.log("Tu nombre es: " + nombre);
 //     alert("Tu nombre es: " + nombre)
 // }
+
+//operaciones basicas numericas
+let numA=10;
+let numB=20;
+const numC=30;
+
+//suma
+let resultado = numA + numB;
+alert(resultado);
+
+//resta
+let resultado2 = numC - numB;
+alert(resultado2);
+
+//multiplicacion
+let resultado3 = numA * numB;
+alert(resultado3);
+
+//divicion
+let resultado4 = numC / numA;
+alert(resultado4);
