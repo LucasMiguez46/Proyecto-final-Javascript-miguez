@@ -21,23 +21,37 @@ function validarEdadYNombre() {
 //     alert("Tu nombre es: " + nombre)
 // }
 
-//operaciones basicas numericas
-let numA=10;
-let numB=20;
-const numC=30;
+// //operaciones basicas numericas
+// let numA=10;
+// let numB=20;
+// const numC=30;
 
-//suma
-let resultado = numA + numB;
-alert(resultado);
+// //suma
+// let resultado = numA + numB;
+// alert(resultado);
 
-//resta
-let resultado2 = numC - numB;
-alert(resultado2);
+// //resta
+// let resultado2 = numC - numB;
+// alert(resultado2);
 
-//multiplicacion
-let resultado3 = numA * numB;
-alert(resultado3);
+// //multiplicacion
+// let resultado3 = numA * numB;
+// alert(resultado3);
 
-//divicion
-let resultado4 = numC / numA;
-alert(resultado4);
+// //divicion
+// let resultado4 = numC / numA;
+// alert(resultado4);
+
+// let nombre=prompt("ingrese su nombre y apellido: ");
+// let salida= "buenas: " + nombre + " que tenga un buen dia";
+// alert(salida);
+
+let nombre=prompt("ingrese su nombre y apellido: ");
+let estatura= parseFloat(prompt("ingrese la estatura: "));
+let peso=parseFloat(prompt("ingrese su peso: "));
+
+let alturaAlCuadrado = estatura * estatura;
+
+let salida = peso / alturaAlCuadrado;
+
+alert("buenas " + nombre + "tu IMC es: " + salida.toFixed(2));
