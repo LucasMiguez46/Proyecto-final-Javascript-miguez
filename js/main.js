@@ -83,10 +83,10 @@
 // alert("el total a pagar es: " + total);
 
 //EJEMPLO FOR==========================================
-alert("inicio");
+// alert("inicio");
 
-let ingresarNumero = parseInt(prompt("ingresar un numero entero: "));
-let salida = "tabla del " + ingresarNumero + "\n\n";
+// let ingresarNumero = parseInt(prompt("ingresar un numero entero: "));
+// let salida = "tabla del " + ingresarNumero + "\n\n";
 
 
 //ejemplo original
@@ -98,20 +98,37 @@ let salida = "tabla del " + ingresarNumero + "\n\n";
 
 
 
-for (let i = 0; i <= 10; i++) {
-    // if(i==5){
-    //     break;
-    // }
+// for (let i = 0; i <= 10; i++) {
+//     // if(i==5){
+//     //     break;
+//     // }
 
-    if(i==5){
-        continue;
-    }
+//     if(i==5){
+//         continue;
+//     }
 
-    let resultado = ingresarNumero * i;
-    salida += ingresarNumero +" X "+ i +" = "+ resultado + "\n";
+//     let resultado = ingresarNumero * i;
+//     salida += ingresarNumero +" X "+ i +" = "+ resultado + "\n";
   
     
-}
+// }
 
-alert(salida);
-alert("fin");
+// alert(salida);
+// alert("fin");
+
+// let entrada = prompt("Ingresar un nombre");
+// //Repetimos hasta que se ingresa "ESC"
+// while(entrada != "ESC" ){
+//    switch (entrada.toUpperCase()) {
+//        case "ANA":
+//             alert("HOLA ANA");
+//             break;
+//         case "JUAN":
+//             alert("HOLA JUAN");
+//             break;
+//        default:
+//            alert("¿QUIÉN SOS?")
+//            break;
+//    }
+//    entrada = prompt("Ingresar un nombre");
+// }
