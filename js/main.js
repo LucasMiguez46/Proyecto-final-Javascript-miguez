@@ -1,13 +1,13 @@
 //esto es un comentario
 // alert("hola mundo!");
 
-function validarEdadYNombre() {
-    let edad = document.getElementById("edad").value;
-    let nombre = document.getElementById("nombre").value;
+// function validarEdadYNombre() {
+//     let edad = document.getElementById("edad").value;
+//     let nombre = document.getElementById("nombre").value;
 
-    console.log("Tu nombre es: " + nombre + ", " + "Tu edad es: " + edad);
-    alert("Tu nombre es: " + nombre + ", " + "Tu edad es: " + edad)
-}
+//     console.log("Tu nombre es: " + nombre + ", " + "Tu edad es: " + edad);
+//     alert("Tu nombre es: " + nombre + ", " + "Tu edad es: " + edad)
+// }
 
 //  function validarEdad() {
 //      let edad = document.getElementById("edad").value;
@@ -21,7 +21,7 @@ function validarEdadYNombre() {
 //     alert("Tu nombre es: " + nombre)
 // }
 
-// //operaciones basicas numericas
+// //operaciones basicas numericas==========================================
 // let numA=10;
 // let numB=20;
 // const numC=30;
@@ -42,6 +42,8 @@ function validarEdadYNombre() {
 // let resultado4 = numC / numA;
 // alert(resultado4);
 
+
+
 // let nombre=prompt("ingrese su nombre y apellido: ");
 // let salida= "buenas: " + nombre + " que tenga un buen dia";
 // alert(salida);
@@ -57,7 +59,7 @@ function validarEdadYNombre() {
 // alert("buenas " + nombre + "tu IMC es: " + salida.toFixed(2));
 
 
-//ejemplo if
+//EJEMPLO IF==========================================
 // let edad=27;
 // let edad = prompt("Por favor ingresar edad: ");
 
@@ -69,13 +71,47 @@ function validarEdadYNombre() {
 //      console.log("eres menor de edad");
 //  }
 
-let producto1 = parseFloat(prompt("Ingrese el importe del producto1: "));
-let producto2 = parseFloat(prompt("Ingrese el importe del producto2: "));
+// let producto1 = parseFloat(prompt("Ingrese el importe del producto1: "));
+// let producto2 = parseFloat(prompt("Ingrese el importe del producto2: "));
 
-let total = producto1 + producto2;
+// let total = producto1 + producto2;
 
-if (total > 10000) {
-    total = total * 0.9;
-} 
+// if (total > 10000) {
+//     total = total * 0.9;
+// } 
 
-alert("el total a pagar es: " + total);
+// alert("el total a pagar es: " + total);
+
+//EJEMPLO FOR==========================================
+alert("inicio");
+
+let ingresarNumero = parseInt(prompt("ingresar un numero entero: "));
+let salida = "tabla del " + ingresarNumero + "\n\n";
+
+
+//ejemplo original
+// for (let i = 0; i <= 10; i++) {
+//     let resultado = ingresarNumero * i;
+//     alert(ingresarNumero +" X "+ i +" = "+ resultado);
+    
+// }
+
+
+
+for (let i = 0; i <= 10; i++) {
+    // if(i==5){
+    //     break;
+    // }
+
+    if(i==5){
+        continue;
+    }
+
+    let resultado = ingresarNumero * i;
+    salida += ingresarNumero +" X "+ i +" = "+ resultado + "\n";
+  
+    
+}
+
+alert(salida);
+alert("fin");
