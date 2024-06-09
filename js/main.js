@@ -132,3 +132,13 @@
 //    }
 //    entrada = prompt("Ingresar un nombre");
 // }
+
+//prueba para saber si una palabra es capicua
+let palabra=prompt("escriba una palabra para saber si es capicua: ");
+let palabraN=palabra.split("").reverse().join("");
+
+if(palabra===palabraN){
+    alert("es capicua");
+}else{
+    alert("no es capicua");
+}
