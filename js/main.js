@@ -52,32 +52,34 @@ while (nombre != "ESC"){
 
 //Desde aca empiezan las funciones
 function obtenerMarca(numero) {
-    if (numero == 1) {
-        return "Ford";
-    }else if (numero == 2) {
-        return "Chevrolet";
-    }else if (numero == 3) {
-        return "Audi";
-    }else if (numero == 4) {
-        return "Fiat";
-    }else{
-        return undefined;
+    switch (numero) {
+        case 1:
+            return "Ford";
+        case 2:
+            return "Chevrolet";
+        case 3:
+            return "Audi";
+        case 4:
+            return "Fiat";
+        default:
+            return undefined;
     }
 }
 
 function obtenerAnioAproximado(numero) {
-    if (numero == 1) {
-        return "2000 al 2005";
-    }else if (numero == 2) {
-        return "2006 al 2010";
-    }else if (numero == 3) {
-        return "2011 al 2015";
-    }else if (numero == 4) {
-        return "2016 al 2020";
-    }else if (numero == 5) {
-        return "2021 al 2025";
-    }else{
-        return undefined;
+    switch (numero) {
+        case 1:
+            return "2000 al 2005";
+        case 2:
+            return "2006 al 2010";
+        case 3:
+            return "2011 al 2015";
+        case 4:
+            return "2016 al 2020";
+        case 5:
+            return "2021 al 2025";
+        default:
+            return undefined;
     }
 }
 
