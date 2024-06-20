@@ -114,23 +114,21 @@ function obtenerValorAnio(anio){
 }
 
 function sumar(valor1,valor2){
-    return valorTotal = valor1 + valor2;
+    return valor1 + valor2;
 }
 
 function verificacionKm(valorTotal,km) {
     if (km=="si") {
-        return valorTotal = valorTotal+((valorTotal*10)/100);
-    }else{
-        return valorTotal;
+        valorTotal=valorTotal+((valorTotal*10)/100);
     }
+    return valorTotal;
 }
 
 function verificacionGnc(valorTotal,gnc){
     if (gnc=="si") {
-        return valorTotal = valorTotal+((valorTotal*30)/100);
-    }else{
-        return valorTotal;
+        valorTotal=valorTotal+((valorTotal*30)/100);
     }
+    return valorTotal;
 }
 
 function salida(marca, anio,km,gnc, nombre, valorMarca,valorAnio,valorTotal) {
