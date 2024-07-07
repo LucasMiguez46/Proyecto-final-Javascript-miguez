@@ -78,15 +78,84 @@ catalogoPote.agregarProducto("Pote de 1/4", 2000);
 catalogoPote.agregarProducto("Pote de 1/2", 4000);
 catalogoPote.agregarProducto("Pote de 1 kilo", 6000);
 
-console.log(catalogoPaleta.obtenerProductos());
-console.log(catalogoPote.obtenerProductos());
+//verificacion por consola que este todo bien.
+//console.log(catalogoPaleta.obtenerProductos());
+//console.log(catalogoPote.obtenerProductos());
 
-// catalogo.agregarProducto("Cunnington Cola", 1900);
-// catalogo.agregarProducto("Sprite", 1800);
-// catalogo.agregarProducto("Pretty", 1400);
-// console.log(catalogo.obtenerProductos());
+//obtenemos la opcion que quiera el usuario y su nombre.
+const nombre = prompt("Ingrese su nombre por favor: ");
+let textOpcion = "Escoja la opcion numeral que quiera: \n";
+textOpcion += "1-Paletas\n";
+textOpcion += "2-Pote de helado\n";
 
-//console.log(catalogo.eliminarProducto(1));
+//la opcion se guardara en esta variable.
+let opcion=parseInt(prompt(textOpcion))
+
+//tal como su nombre lo indica, paso la opcion numeral a String.
+opcion = pasaAString(opcion);
+
+function pasaAString(o) {
+    if (o == 1) {
+        return "paletas";
+    }else{
+        return "potes";
+    }
+}
+
+//establezco cadenas para mostrar los productos dependiendo la opcion que se elija antes.
+let textCatalogoPaleta = "Escoja la opcion numeral que quiera: \n";
+textCatalogoPaleta += "1-" + catalogoPaleta.buscarProducto(1).nombre + "precio: " + catalogoPaleta.buscarProducto(1).precio + ".\n";
+textCatalogoPaleta += "2-" + catalogoPaleta.buscarProducto(2).nombre + "precio: " + catalogoPaleta.buscarProducto(2).precio + ".\n";
+textCatalogoPaleta += "3-" + catalogoPaleta.buscarProducto(3).nombre + "precio: " + catalogoPaleta.buscarProducto(3).precio + ".\n";
+
+let textCatalogoPote = "Escoja la opcion numeral que quiera: \n";
+textCatalogoPote += "1-" + catalogoPote.buscarProducto(1).nombre + "precio: " + catalogoPote.buscarProducto(1).precio + ".\n";
+textCatalogoPote += "2-" + catalogoPote.buscarProducto(2).nombre + "precio: " + catalogoPote.buscarProducto(2).precio + ".\n";
+textCatalogoPote += "3-" + catalogoPote.buscarProducto(3).nombre + "precio: " + catalogoPote.buscarProducto(3).precio + ".\n";
+
+//en efecto, la funcion muestra por pantalla emergente las posibilidades dependiendo de la eleccion anterior.
+function eleccion(string) {
+    if (string == "paletas") {
+        return parseInt(prompt(textCatalogoPaleta));
+    }else{
+        return parseInt(prompt(textCatalogoPote));
+    }
+}
+
+//guardo la opcion a pedir en la siguiente variable.
+let opcionAPedir= eleccion(opcion);
+//desde aca comienza el codigo que afecta a la lista de pedidos del usuario.
+const pedidosDelUsuario = new Productos(arrayPedidos);
+pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(1).nombre,catalogoPaleta.buscarProducto(1).precio)
+
+//y empleo una nueva funcion para obtener el string dependiendo de elecciones
+// eleccionVDos(opcion, opcionAPedir);
+
+// //segunda version de obtener eleccion pero del sub tipo del producto elegido
+// function eleccionVDos(string, opcionAPedir) {
+//     if (string == "paletas") {
+//         obtenerOpcionPaleta(opcionAPedir);
+//     }else{
+//         obtenerOpcionPote(opcionAPedir);
+//     }
+// }
+
+//funcion que obtiene la opcion del producto paleta en string dependiendo el numero
+// function obtenerOpcionPaleta(numero) {
+//     return pedidosDelUsuario.agregarProducto((catalogoPaleta.buscarProducto(numero).nombre,catalogoPaleta.buscarProducto(numero).precio));;
+// }
+
+// //funcion que obtiene la opcion del producto pote en string dependiendo el numero
+// function obtenerOpcionPote(numero) {
+//     return pedidosDelUsuario.agregarProducto((catalogoPote.buscarProducto(numero).nombre,catalogoPote.buscarProducto(numero).precio));;
+// }
+
+let precioTotal=catalogoPaleta.buscarProducto(1).precio;
+
+//muestra por consola las opciones elegidas.
+alert("Nombre:" + nombre + ", opcion: " + opcion + " y la lista de productos es: ");
+pedidosDelUsuario.listarProductos();
+alert("el precio total es el siguiente: " + precioTotal);
 
 // const pedidosDelUsuario = new Productos(arrayPedidos);
 // console.log(pedidosDelUsuario.agregarProducto(catalogo.buscarProducto(1).nombre,catalogo.buscarProducto(1).precio));
