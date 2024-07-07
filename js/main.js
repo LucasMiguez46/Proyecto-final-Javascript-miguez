@@ -62,6 +62,16 @@ class Productos{
         this.items.forEach(item => {item.id = item.id -1})
         
     }
+
+    sumarPrecios(){
+        let salida = 0;
+
+        for (const producto of this.items) {
+            salida += producto.precio;
+        }
+
+        return salida;
+    }
 }
 
 //creacion de los objetos arrays.
@@ -127,30 +137,9 @@ let opcionAPedir= eleccion(opcion);
 //desde aca comienza el codigo que afecta a la lista de pedidos del usuario.
 const pedidosDelUsuario = new Productos(arrayPedidos);
 pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(1).nombre,catalogoPaleta.buscarProducto(1).precio)
-
-//y empleo una nueva funcion para obtener el string dependiendo de elecciones
-// eleccionVDos(opcion, opcionAPedir);
-
-// //segunda version de obtener eleccion pero del sub tipo del producto elegido
-// function eleccionVDos(string, opcionAPedir) {
-//     if (string == "paletas") {
-//         obtenerOpcionPaleta(opcionAPedir);
-//     }else{
-//         obtenerOpcionPote(opcionAPedir);
-//     }
-// }
-
-//funcion que obtiene la opcion del producto paleta en string dependiendo el numero
-// function obtenerOpcionPaleta(numero) {
-//     return pedidosDelUsuario.agregarProducto((catalogoPaleta.buscarProducto(numero).nombre,catalogoPaleta.buscarProducto(numero).precio));;
-// }
-
-// //funcion que obtiene la opcion del producto pote en string dependiendo el numero
-// function obtenerOpcionPote(numero) {
-//     return pedidosDelUsuario.agregarProducto((catalogoPote.buscarProducto(numero).nombre,catalogoPote.buscarProducto(numero).precio));;
-// }
-
-let precioTotal=catalogoPaleta.buscarProducto(1).precio;
+pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(3).nombre,catalogoPaleta.buscarProducto(3).precio)
+pedidosDelUsuario.agregarProducto(catalogoPote.buscarProducto(3).nombre,catalogoPote.buscarProducto(3).precio)
+let precioTotal = pedidosDelUsuario.sumarPrecios();
 
 //muestra por consola las opciones elegidas.
 alert("Nombre:" + nombre + ", opcion: " + opcion + " y la lista de productos es: ");
