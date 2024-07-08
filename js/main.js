@@ -49,7 +49,7 @@ class Productos{
 
         return max + 1;
     }
-
+//VERIFICAR
     eliminarProducto(id) {
         // Opción #1 - Eliminar con método splice
         let pos = this.items.findIndex(item => item.id == id); // Busqué la posición del elemento a eliminar en el array items (2)
@@ -71,6 +71,10 @@ class Productos{
         }
 
         return salida;
+    }
+
+    sumarIva(precio){
+        return precio += precio * 0.21;
     }
 }
 
@@ -104,8 +108,8 @@ let opcion=parseInt(prompt(textOpcion))
 //tal como su nombre lo indica, paso la opcion numeral a String.
 opcion = pasaAString(opcion);
 
-function pasaAString(o) {
-    if (o == 1) {
+function pasaAString(op) {
+    if (op == 1) {
         return "paletas";
     }else{
         return "potes";
@@ -123,6 +127,7 @@ textCatalogoPote += "1-" + catalogoPote.buscarProducto(1).nombre + "precio: " + 
 textCatalogoPote += "2-" + catalogoPote.buscarProducto(2).nombre + "precio: " + catalogoPote.buscarProducto(2).precio + ".\n";
 textCatalogoPote += "3-" + catalogoPote.buscarProducto(3).nombre + "precio: " + catalogoPote.buscarProducto(3).precio + ".\n";
 
+//VERIFICAR
 //en efecto, la funcion muestra por pantalla emergente las posibilidades dependiendo de la eleccion anterior.
 function eleccion(string) {
     if (string == "paletas") {
@@ -132,14 +137,26 @@ function eleccion(string) {
     }
 }
 
+//VERIFICAR
 //guardo la opcion a pedir en la siguiente variable.
 let opcionAPedir= eleccion(opcion);
+
+
+//si me guarda el numero, seguir verificando.
+console.log("opcion a pedir: "+opcionAPedir);
 //desde aca comienza el codigo que afecta a la lista de pedidos del usuario.
 const pedidosDelUsuario = new Productos(arrayPedidos);
-pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(1).nombre,catalogoPaleta.buscarProducto(1).precio)
-pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(3).nombre,catalogoPaleta.buscarProducto(3).precio)
-pedidosDelUsuario.agregarProducto(catalogoPote.buscarProducto(3).nombre,catalogoPote.buscarProducto(3).precio)
+
+if (opcion == "paletas") {
+    pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(opcionAPedir).nombre,catalogoPaleta.buscarProducto(opcionAPedir).precio);
+}else{
+    pedidosDelUsuario.agregarProducto(catalogoPote.buscarProducto(opcionAPedir).nombre,catalogoPote.buscarProducto(opcionAPedir).precio);
+}
+// pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(1).nombre,catalogoPaleta.buscarProducto(1).precio)
+// pedidosDelUsuario.agregarProducto(catalogoPaleta.buscarProducto(3).nombre,catalogoPaleta.buscarProducto(3).precio)
+// pedidosDelUsuario.agregarProducto(catalogoPote.buscarProducto(3).nombre,catalogoPote.buscarProducto(3).precio)
 let precioTotal = pedidosDelUsuario.sumarPrecios();
+precioTotal = pedidosDelUsuario.sumarIva(precioTotal);
 
 //muestra por consola las opciones elegidas.
 alert("Nombre:" + nombre + ", opcion: " + opcion + " y la lista de productos es: ");
