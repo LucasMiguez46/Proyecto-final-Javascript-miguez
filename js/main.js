@@ -57,7 +57,10 @@ class Productos{
         this.items.splice(pos, 1); // Eliminar el elemento de la posición "pos"
         
         console.log("Se eliminó el Producto: #" + id);
-        this.items.forEach(item => {item.id = item.id -1})
+        // Reasigna los IDs de los elementos restantes
+        for (let i = pos; i < this.items.length; i++) {
+            this.items[i].id = i + 1; // Asigna un nuevo ID basado en la posición
+        }
         
     }
 
@@ -94,14 +97,14 @@ catalogoPote.agregarProducto("Pote de 1 kilo", 6000);
 
 //establezco cadenas para mostrar los productos dependiendo la opcion que se elija antes.
 let textCatalogoPaleta = "Escoja la opcion numeral que quiera: \n";
-textCatalogoPaleta += "1-" + catalogoPaleta.buscarProducto(1).nombre + "precio: " + catalogoPaleta.buscarProducto(1).precio + ".\n";
-textCatalogoPaleta += "2-" + catalogoPaleta.buscarProducto(2).nombre + "precio: " + catalogoPaleta.buscarProducto(2).precio + ".\n";
-textCatalogoPaleta += "3-" + catalogoPaleta.buscarProducto(3).nombre + "precio: " + catalogoPaleta.buscarProducto(3).precio + ".\n";
+textCatalogoPaleta += "1-" + catalogoPaleta.buscarProducto(1).nombre + ", precio: " + catalogoPaleta.buscarProducto(1).precio + ".\n";
+textCatalogoPaleta += "2-" + catalogoPaleta.buscarProducto(2).nombre + ", precio: " + catalogoPaleta.buscarProducto(2).precio + ".\n";
+textCatalogoPaleta += "3-" + catalogoPaleta.buscarProducto(3).nombre + ", precio: " + catalogoPaleta.buscarProducto(3).precio + ".\n";
 
 let textCatalogoPote = "Escoja la opcion numeral que quiera: \n";
-textCatalogoPote += "1-" + catalogoPote.buscarProducto(1).nombre + "precio: " + catalogoPote.buscarProducto(1).precio + ".\n";
-textCatalogoPote += "2-" + catalogoPote.buscarProducto(2).nombre + "precio: " + catalogoPote.buscarProducto(2).precio + ".\n";
-textCatalogoPote += "3-" + catalogoPote.buscarProducto(3).nombre + "precio: " + catalogoPote.buscarProducto(3).precio + ".\n";
+textCatalogoPote += "1-" + catalogoPote.buscarProducto(1).nombre + ", precio: " + catalogoPote.buscarProducto(1).precio + ".\n";
+textCatalogoPote += "2-" + catalogoPote.buscarProducto(2).nombre + ", precio: " + catalogoPote.buscarProducto(2).precio + ".\n";
+textCatalogoPote += "3-" + catalogoPote.buscarProducto(3).nombre + ", precio: " + catalogoPote.buscarProducto(3).precio + ".\n";
 
 //lista del usuario
 const pedidosDelUsuario = new Productos(arrayPedidos);
@@ -128,7 +131,15 @@ do{
     let opcionAPedir= eleccion(opcion);
 
     //desde aca comienza el codigo que afecta a la lista de pedidos del usuario.
-    let productoParaLista = agregarAListaUsuario(opcion, opcionAPedir)
+    agregarAListaUsuario(opcion, opcionAPedir);
+
+    let preguntaSiEliminaProducto=confirm("confirme si desea eliminar un producto: ");
+    if (preguntaSiEliminaProducto) {
+        alert("A continuacion se le mostrara los productos que posee en el carrito, elija con un numero el que desee eliminar");
+        pedidosDelUsuario.listarProductos();
+        let idAEliminar = parseInt(prompt("ingrese el numero correspondiente"));
+        quitarAListaUsuario(idAEliminar);
+    }
 
     continuar = confirm("¿Desea hacer otro pedido?");
 }while(continuar);
@@ -166,6 +177,10 @@ function agregarAListaUsuario(opcion, numID) {
     }else{
         pedidosDelUsuario.agregarProducto(catalogoPote.buscarProducto(numID).nombre,catalogoPote.buscarProducto(numID).precio);
     }
+}
+
+function quitarAListaUsuario(idAEliminar) {
+    pedidosDelUsuario.eliminarProducto(idAEliminar);
 }
 
 //funcion utilizada para la salida de informacion final
