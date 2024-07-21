@@ -80,6 +80,7 @@ body {
   --tipo-secundario: 16px;
   --tipo-h1: 25px;
   --tipo-navGrande: 30px;
+  --tipo-imagen-carrito: 48px;
 }
 /* ==Fin Declaro posibles variables para CSS== */
 
@@ -90,18 +91,18 @@ body{
 }
 
 .extranav{
-background-color: var(--pastel-color);
-color: var(--blanco); 
+  background: linear-gradient(var(--pastel-color), var(--blanco));
+  color: var(--blanco); 
   font-size: var(--tipo-navGrande);
 
-  form{
-    max-width: 500px;
+    form{
+      max-width: 500px;
 
-    button{
-      font-size: var(--tipo-principal);
-      /* background-color: var(--body-color-primary); */
-      width: 150px;
-    }
+      button{
+        font-size: var(--tipo-principal);
+        /* background-color: var(--body-color-primary); */
+        width: 150px;
+      }
   }
 
   li a{
@@ -127,6 +128,11 @@ color: var(--blanco);
   }
 }
 
+.ajustarImagenCarrito{
+  width: var(--tipo-imagen-carrito);
+  height: var(--tipo-imagen-carrito);
+}
+
 
 h1{
   display: flex;
@@ -136,9 +142,12 @@ h1{
   justify-content: center;
 }
 
-/* footer{
-background-color: var(--pastel-color);
-} */
+footer{
+  padding: 15px;
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient( var(--blanco), var(--pastel-color));
+}
 
 /* h2{
   display: flex;
