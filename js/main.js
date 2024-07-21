@@ -21,7 +21,7 @@ function renderProductos() {
 
 
 renderProductos();
-totalProducto();
+renderBotonCarrito();
 
 // ======================================
 
