@@ -3,6 +3,7 @@ function renderCarrito() {
     // let precioTotal= sumarProductos();
     let contenidoHTML;
     let precioTotal;
+    let contProductos = 0;
 
     if (totalProducto()>0) {
         precioTotal=0;
@@ -25,6 +26,19 @@ function renderCarrito() {
                 <td class="text-end align-middle"><button class="btn btn-danger btn-lg" onclick="eliminarProducto(${producto.id});">Eliminar <i class="bi bi-trash"></i></button></td>
                 </tr>`;
                 precioTotal += producto.precio;
+                contProductos += 1;
+        }
+        console.log(contProductos);
+        console.log(precioTotal);
+
+        if (contProductos > 3) {
+            precioTotal -= precioTotal*0.10;
+            console.log(precioTotal);
+        }
+
+        if (precioTotal > 20000) {
+            precioTotal -= precioTotal*0.10;
+            console.log(precioTotal);
         }
         contenidoHTML += 
         `<tr>

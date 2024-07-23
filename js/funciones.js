@@ -1,8 +1,12 @@
 const productos = [
-    {id:1, nombre:"Cono de helado", descripcion:"Helado en forma de cono con una bocha" , precio: 4000, imagen:"ice-cream-reference-1.png", categoria:"cono"},
-    {id:2, nombre:"Palito bombom helado", descripcion:"Helado en forma de cono con una bocha" , precio: 5000, imagen:"ice-cream-reference-2.png", categoria:"palito"},
-    {id:3, nombre:"Palito de agua", descripcion:"Helado en forma de cono con una bocha" , precio: 3000, imagen:"ice-cream-reference-3.png", categoria:"palito"},
-    {id:4, nombre:"Pote de helado", descripcion:"Helado en forma de cono con una bocha" , precio: 8000, imagen:"ice-cream-reference-4.png", categoria:"pote"},
+    {id:1, nombre:"Cono de helado de una bocha", descripcion:"Helado en forma de cono con una bocha" , precio: 4000, imagen:"ice-cream-reference-1.png", categoria:"cono"},
+    {id:2, nombre:"Cono de helado de dos bochas", descripcion:"Helado en forma de cono con dos bochas" , precio: 4500, imagen:"ice-cream-reference-5.png", categoria:"cono"},
+    {id:3, nombre:"Palito bombom helado", descripcion:"helado con crema recubierto de chocolate" , precio: 5000, imagen:"ice-cream-reference-2.png", categoria:"palito"},
+    {id:4, nombre:"Palito de agua", descripcion:"helado de agua" , precio: 3000, imagen:"ice-cream-reference-3.png", categoria:"palito"},
+    {id:5, nombre:"Pote de helado 1/4", descripcion:"pote de helado de 1/4" , precio: 4500, imagen:"ice-cream-reference-4.png", categoria:"pote"},
+    {id:6, nombre:"Pote de helado 1/2", descripcion:"pote de helado de 1/2" , precio: 7000, imagen:"ice-cream-reference-4.png", categoria:"pote"},
+    {id:7, nombre:"Pote de helado 1 Kilo", descripcion:"pote de helado de 1 kilo" , precio: 9000, imagen:"ice-cream-reference-4.png", categoria:"pote"},
+
 ]
 
 function agregarProducto(id) {

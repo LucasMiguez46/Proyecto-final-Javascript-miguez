@@ -2,7 +2,7 @@ function renderProductos() {
     let contenidoHTML = "";
     for (const producto of productos) {
         contenidoHTML += 
-        `<div class="col-md-3">
+        `<div class="col-md-3 my-2">
             <div class="card">
                 <img src="assets/images/${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                 <div class="card-body text-center">

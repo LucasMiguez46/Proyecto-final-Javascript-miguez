@@ -142,6 +142,18 @@ h1{
   justify-content: center;
 }
 
+.reglas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  li{
+    list-style-type:decimal;
+  }
+
+}
+
 footer{
   padding: 15px;
   text-align: center;
