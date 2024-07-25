@@ -161,6 +161,17 @@ footer{
   background: linear-gradient( var(--blanco), var(--pastel-color));
 }
 
+.opcion{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  select{
+    border: 2px solid var(--negro);
+  }
+}
+
 /* h2{
   display: flex;
   align-items: center;
