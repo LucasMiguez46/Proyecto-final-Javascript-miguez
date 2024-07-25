@@ -62,18 +62,24 @@
         
         <div class="text-center opcion">
           <h3 class="h2 ">Elija la opcion de orden que desee:</h3>
-          <select id="categoryOptions" onchange="filterAndSortProductos()">
-            <option value="Todas">Todas</option>
-            <option value="cono">cono</option>
-            <option value="palito">palito</option>
-            <option value="pote">pote</option>
-        </select>
 
-          <select name="" id="sortOptions" onchange="filterAndSortProductos()">
-            <option value="default">Default</option>
-            <option value="Menor a Mayor">Menor a Mayor</option>
-            <option value="Mayor a Menor">Mayor a Menor</option>
-          </select>
+          <div class="row">
+            <h4 class="h3 my-3">Por categoria:</h4>
+            <select id="categoryOptions" onchange="filterAndSortProductos()" class="text-center">
+              <option value="Todas">Todas</option>
+              <option value="cono">cono</option>
+              <option value="palito">palito</option>
+              <option value="pote">pote</option>
+            </select>
+  
+            <h4 class="h3 my-3">Por precio:</h4>
+            <select name="" id="sortOptions" onchange="filterAndSortProductos()" class="text-center">
+              <option value="default">Default</option>
+              <option value="Menor a Mayor">Menor a Mayor</option>
+              <option value="Mayor a Menor">Mayor a Menor</option>
+            </select>
+          </div>
+
         </div>
 
         <div class="container my-5">

@@ -147,7 +147,12 @@ h1{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 10px;
 
+  ul{
+    margin: 5px;
+    border: 2px solid var(--negro);
+  }
   li{
     list-style-type:decimal;
   }
@@ -163,7 +168,7 @@ footer{
 
 .opcion{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   
@@ -171,51 +176,3 @@ footer{
     border: 2px solid var(--negro);
   }
 }
-
-/* h2{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cuestionario{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 30px;
-  font-family: inherit;
-  font-size: var(--tipo-principal);
-  width: 100%; */
-  /* background-color: var(--body-color-secundary); */
-
-  /* input, textarea{
-    background-color: var(--body-color-primary);
-      border-radius: 10px;
-      width: 100%;
-  }
-
-  input:focus, textarea:focus{
-      background-color:antiquewhite;
-  }
-
-  button{
-    padding: 10px;
-    background-color: aquamarine;
-    border-radius: 8px;
-  }
-}
-
-.cuestionario-bg{
-  background-color: var(--body-color-secundary);
-  padding: 10px;
-  border-radius: 8px;
-}
-
-
-.formulario{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-} */
