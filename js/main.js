@@ -9,7 +9,7 @@ function renderProductos(productosParaMostrar) {
                         <p class="card-text">${producto.nombre}</br>$${producto.precio} ARS</p>
                     </div>
                     <div class="card-body text-center">
-                        <button class="btn btn-dark" onClick="agregarProducto(${producto.id});">Agregar (+)</button>
+                        <button class="btn btn-dark" onClick="agregarProducto(${producto.id}); productoGuardado()">Agregar (+)</button>
                     </div>
                 </div>
             </div>`;
@@ -18,6 +18,8 @@ function renderProductos(productosParaMostrar) {
     document.getElementById("contenido").innerHTML = contenidoHTML;
     console.log(contenidoHTML);
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     renderProductos(productos);

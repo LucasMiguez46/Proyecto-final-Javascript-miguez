@@ -80,3 +80,69 @@ function vaciarCarrito() {
     renderCarrito();
     renderBotonCarrito();
 }
+
+// ====funcion de la libreria Sweet Alert
+function productoGuardado() {
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Su producto a sido agregado al carrito!",
+        showConfirmButton: false,
+        timer: 1200
+      });
+}
+
+function productoEliminado() {
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Su producto a sido removido al carrito!",
+        showConfirmButton: false,
+        timer: 1200
+      });
+}
+
+function listaVaciada() {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+      });
+      swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+          vaciarCarrito();
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your imaginary file is safe :)",
+            icon: "error"
+          });
+        }
+      });
+
+    // Swal.fire({
+    //     position: "center",
+    //     icon: "error",
+    //     title: "Se ha vaciado el carrito!",
+    //     showConfirmButton: false,
+    //     timer: 1200
+    //   });
+}

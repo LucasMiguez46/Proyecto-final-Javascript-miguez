@@ -15,7 +15,7 @@ function renderCarrito() {
         <td class="text-decoration-underline">Imagen de referencia:</td>
         <td class="text-decoration-underline">Nombre del producto:</td>
         <td class="text-center text-decoration-underline">Precio:</td>
-        <td class="text-end" colspan="4"><button class="btn btn-danger btn-lg" onclick="vaciarCarrito();">Vaciar Carrito <i class="bi bi-trash"></i></button></td>
+        <td class="text-end" colspan="4"><button class="btn btn-danger btn-lg" onclick="listaVaciada()">Vaciar Carrito <i class="bi bi-trash"></i></button></td>
         </tr>`;
         for (const producto of carrito) {
             contenidoHTML += 
@@ -23,7 +23,7 @@ function renderCarrito() {
                 <td><img src="../assets/images/${producto.imagen}" alt="${producto.nombre}" class="ajustarImagenCarrito"></td>
                 <td class="align-middle">${producto.nombre}</td>
                 <td class="text-center align-middle"><span class="text-danger">$${producto.precio} ARS</span></td>
-                <td class="text-end align-middle"><button class="btn btn-danger btn-lg" onclick="eliminarProducto(${producto.id});">Eliminar <i class="bi bi-trash"></i></button></td>
+                <td class="text-end align-middle"><button class="btn btn-danger btn-lg" onclick="eliminarProducto(${producto.id}); productoEliminado()">Eliminar <i class="bi bi-trash"></i></button></td>
                 </tr>`;
                 precioTotal += producto.precio;
                 contProductos += 1;
