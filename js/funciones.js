@@ -26,11 +26,12 @@ function agregarProducto(id) {
 function generarId(items) {
     let max = totalProducto();
     
-    // items.forEach(item => {
-    //     if (item.id > max) {
-    //         max = item.id;
-    //     }
-    // });
+//revisar
+    items.forEach(item => {
+        if (item.id > max) {
+            max = item.id;
+        }
+    });
 
     return max + 1;
 }
@@ -60,6 +61,7 @@ function guardarCarritoLS(carrito) {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+//revisar
 function cargarCarritoLS() {
     return JSON.parse(localStorage.getItem("carrito")) || [];
 }
