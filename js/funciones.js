@@ -9,7 +9,62 @@ const productos = [
 
 ]
 
+//===========================================
+
+// // Convertir el array a una cadena JSON y almacenarlo en localStorage
+// localStorage.setItem("productos", JSON.stringify(productos));
+
+// // Paso 2: Simular la obtención de datos con fetch
+// async function obtenerProductos() {
+//     // Simulando una espera como si se estuviera realizando una solicitud de red
+//     const response = await new Promise((resolve) => {
+//         setTimeout(() => {
+//             // Obtener los datos de localStorage
+//             const data = localStorage.getItem("productos");
+//             resolve(new Response(data, { status: 200 }));
+//         }, 1000); // 1 segundo de retardo
+//     });
+
+//     // Procesar la respuesta
+//     if (response.ok) {
+//         const productos = await response.json();
+//         console.log(productos);
+//         return productos;
+//     } else {
+//         throw new Error("Error al obtener los productos");
+//     }
+// }
+
+//===========================================
 function agregarProducto(id) {
+//   // Obtener los productos de localStorage de manera asíncrona
+//   obtenerProductos().then((productos) => {
+//     // Buscar el producto con el id especificado
+//     const producto = productos.find(item => item.id == id);
+//     if (producto) {
+//         // Cargar el carrito desde localStorage
+//         const carrito = cargarCarritoLS();
+
+//         // Generar un nuevo ID para el producto
+//         const nuevoId = generarId(carrito);
+//         const nuevoProducto = { ...producto, id: nuevoId };
+
+//         // Agregar el nuevo producto al carrito
+//         carrito.push(nuevoProducto);
+
+//         // Guardar el carrito actualizado en localStorage
+//         guardarCarritoLS(carrito);
+
+//         // Actualizar la interfaz del carrito
+//         renderBotonCarrito();
+//     } else {
+//         console.error("Producto no encontrado");
+//     }
+// }).catch((error) => {
+//     console.error("Error al obtener los productos:", error);
+// });
+
+//ANTERIOR
     const producto = productos.find(item => item.id == id);
     const carrito = cargarCarritoLS();
 
@@ -19,11 +74,36 @@ function agregarProducto(id) {
 
     carrito.push(nuevoProducto);
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    guardarCarritoLS(carrito);
     renderBotonCarrito();
 }
 
+//console.log(obtenerProductos());
+
+
 function generarId(items) {
+//   return obtenerProductos().then((productos) => {
+    
+//     let max = totalProducto(); // Asumiendo que totalProducto da el total de productos
+
+//     // Revisar los productos en el carrito
+//     items.forEach(item => {
+//         if (item.id > max) {
+//             max = item.id;
+//         }
+//     });
+
+//     // Revisar también los IDs de productos en el inventario
+//     productos.forEach(producto => {
+//         if (producto.id > max) {
+//             max = producto.id;
+//         }
+//     });
+
+//     return max + 1;
+// });
+
+//ANTERIOR  
     let max = totalProducto();
     
 //revisar
@@ -71,10 +151,45 @@ function guardarProductoLS(id) {
 }
 
 function cargarProductoLS() {
-    let id = JSON.parse(localStorage.getItem("producto"));
-    const producto = productos.find(item => item.id == id);
+//   try {
+//     let id = JSON.parse(localStorage.getItem("producto"));
+//     if (id === null) {
+//         console.warn("No se encontró ningún ID de producto en localStorage.");
+//         return null;
+//     }
 
+//     return obtenerProductos().then((productos) => {
+//         const producto = productos.find(item => item.id == id);
+//         if (!producto) {
+//             console.warn(`No se encontró ningún producto con el ID ${id}.`);
+//             return null;
+//         }
+//         return producto;
+//     });
+// } catch (error) {
+//     console.error("Error al cargar el producto desde localStorage:", error);
+//     return null;
+// }
+
+
+//ANTERIOR
+  try {
+    let id = JSON.parse(localStorage.getItem("producto"));
+    if (id === null) {
+      console.warn("No se encontró ningún ID de producto en localStorage.");
+      return null;
+    }
+      const producto = productos.find(item => item.id == id);
+      if (!producto) {
+        console.warn(`No se encontró ningún producto con el ID ${id}.`);
+        return null;
+    }
     return producto;
+
+  } catch (error) {
+    console.error("Error al cargar el producto desde localStorage:", error);
+    return null;
+  }
 }
 
 function vaciarCarrito() {
@@ -139,12 +254,4 @@ function listaVaciada() {
           });
         }
       });
-
-    // Swal.fire({
-    //     position: "center",
-    //     icon: "error",
-    //     title: "Se ha vaciado el carrito!",
-    //     showConfirmButton: false,
-    //     timer: 1200
-    //   });
 }

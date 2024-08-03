@@ -1,6 +1,5 @@
 function renderCarrito() {
     const carrito = cargarCarritoLS();
-    // let precioTotal= sumarProductos();
     let contenidoHTML;
     let precioTotal;
     let contProductos = 0;
