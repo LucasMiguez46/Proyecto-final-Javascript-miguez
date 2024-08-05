@@ -1,4 +1,4 @@
-const productos = [
+const productosJson = [
     {id:1, nombre:"Cono de helado de una bocha", descripcion:"Helado en forma de cono con una bocha" , precio: 4000, imagen:"ice-cream-reference-1.png", categoria:"cono"},
     {id:2, nombre:"Cono de helado de dos bochas", descripcion:"Helado en forma de cono con dos bochas" , precio: 4500, imagen:"ice-cream-reference-5.png", categoria:"cono"},
     {id:3, nombre:"Palito bombom helado", descripcion:"helado con crema recubierto de chocolate" , precio: 5000, imagen:"ice-cream-reference-2.png", categoria:"palito"},
@@ -6,17 +6,50 @@ const productos = [
     {id:5, nombre:"Pote de helado 1/4", descripcion:"pote de helado de 1/4" , precio: 4500, imagen:"ice-cream-reference-4.png", categoria:"pote"},
     {id:6, nombre:"Pote de helado 1/2", descripcion:"pote de helado de 1/2" , precio: 7000, imagen:"ice-cream-reference-4.png", categoria:"pote"},
     {id:7, nombre:"Pote de helado 1 Kilo", descripcion:"pote de helado de 1 kilo" , precio: 9000, imagen:"ice-cream-reference-4.png", categoria:"pote"},
-
 ]
 
 //===========================================
 
-// Acceder a un JSON local y realizar un Render de Productos en nuestro HTML
-fetch("json/productosls.json")
-  .then(response => response.json())
-  .then(data => {
-      console.log(data);
-}) 
+// Almacenar en localStorage
+localStorage.setItem('productosls', JSON.stringify(productosJson));
+
+function simularApi() {
+  return new Promise((resolve, reject) => {
+    // Simular una demora en la respuesta
+    setTimeout(() => {
+      // Obtener productos del localStorage
+      const productos = JSON.parse(localStorage.getItem("productosls"));
+      
+      if (productos) {
+        resolve(productos);
+      } else {
+        reject('No se encontraron productos');
+      }
+    }, 1000); // 1000 ms de demora simulada
+  });
+}
+
+async function obtenerProductos() {
+  try {
+    const response = await fetch('/fake-api', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    // En lugar de una respuesta real de fetch, utilizamos la simulación
+    const productos = await simularApi();
+    //renderProductos(productos);
+    console.log('Productos obtenidos:', productos);
+  } catch (error) {
+    console.error('Error al obtener productos:', error);
+  }
+}
+
+obtenerProductos();
+//console.log(productos);
+
 
 //===========================================
 function agregarProducto(id) {

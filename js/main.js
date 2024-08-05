@@ -19,9 +19,17 @@ function renderProductos(productosParaMostrar) {
     console.log(contenidoHTML);
 }
 
-
-
+let productos = [];
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Obtener productos del localStorage
+    const productosStorage = localStorage.getItem('productosls');
+    if (productosStorage) {
+        productos = JSON.parse(productosStorage);
+    } else {
+        console.warn("No se encontraron productos en el localStorage");
+    }
+
     renderProductos(productos);
     renderBotonCarrito();
 });
@@ -44,4 +52,5 @@ function filterAndSortProductos() {
     renderProductos(sortedProductos);
 }
 
-renderProductos(productos);
+
+// renderProductos(productos);
