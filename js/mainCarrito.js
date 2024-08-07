@@ -54,10 +54,8 @@ function renderCarrito() {
 
 
 
-    document.getElementById("contenido").innerHTML = contenidoHTML;
-    // console.log(contenidoHTML);
+    document.getElementById("contenido2").innerHTML = contenidoHTML;
 }
-
 
 renderCarrito();
 renderBotonCarrito();

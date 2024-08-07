@@ -63,6 +63,7 @@ function agregarProducto(id) {
     carrito.push(nuevoProducto);
 
     guardarCarritoLS(carrito);
+    renderCarrito();
     renderBotonCarrito();
 }
 

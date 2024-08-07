@@ -142,6 +142,12 @@ h1{
   justify-content: center;
 }
 
+.ajustesHeader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .reglas{
   display: flex;
   flex-direction: column;
