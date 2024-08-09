@@ -4,7 +4,7 @@ function renderProductos(productosParaMostrar) {
             contenidoHTML += 
             `<div class="col-md-3 my-2 ">
                 <div class="card bg-transparent">
-                    <img src="assets/images/${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                    <img src="assets/images/${producto.imagen}" class="card-img-top p-3" alt="${producto.nombre}">
                     <div class="card-body text-center ">
                         <p class="card-text h3">${producto.nombre}</br>$${producto.precio} ARS</p>
                     </div>

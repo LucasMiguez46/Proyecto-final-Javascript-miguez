@@ -18,14 +18,14 @@
     <!-- Inicio Head -->
      <!-- revisar el head, modificarlo again -->
     <head> 
-      <nav class="extranav" >
+      <nav class="extranav" id="navbar" >
         <div class="container">
           <div class="row">
             <div class="col">
               <a class="text-light iconPag" href="index.html">
                 <img src="assets/images/ice-cream-icon.png" alt="ice-cream-icon">
               </a>
-            </div>
+            </div>      
 
             <div class="col d-flex align-items-center justify-content-center">
               <ul class="nav">
@@ -47,13 +47,13 @@
     </head>
 
     <!-- Inicio Main -->
-    <main>
+    <main class="conteiner">
 
-        <h1 class="justify-content-center" id="productos">Simulador de heladeria online</h1>
+        <h1 class="justify-content-center tituloPrincipal" id="productos">Simulador de heladeria online</h1>
 
         <section class="my-5">
           <section class="reglas">
-            <h2>algunos concejos:</h2>
+            <h2 class="h2">algunos concejos:</h2>
             <ul>
               <li>Para agregar al carrito solo presione el boton "agregar".</li>
               <li>Si compra mas de 3 productos se le aplicara un 10% de descuento.</li>
@@ -63,7 +63,7 @@
           </section>
           
           <div class="text-center opcion">
-            <h3 class="h2 ">Elija la opcion de orden que desee:</h3>
+            <h3 class="h2">Elija la opcion de orden que desee:</h3>
 
             <div class="row">
               <h4 class="h3 my-3">Por categoria:</h4>
@@ -85,25 +85,29 @@
           </div>
         </section>
 
-        <section class="conteiner">
+        <section>
           <div class="container my-5 ">
             <!-- <div><h3 class="h2 border-bottom">Seccion de conos:</h3></div> -->
             <div id="contenido" class="row"></div>
           </div>   
         </section>
         
-        <!-- // -->
-        <h2 class="ajustesHeader h1 my-5" id="carrito">Bienvenidos al carrito!</h2>
+        <section>
+          <!-- // -->
+          <h2 class="ajustesHeader h1 my-5" id="carrito">Bienvenidos al carrito!</h2>
 
-        <div class="container my-5">
-          <div id="contenido2" class="row"></div>
-        </div> 
+          <div class="container my-5">
+            <div id="contenido2" class="row"></div>
+          </div> 
+        </section>
+
    
     </main>
 
     <!-- Inicio Footer -->
     <footer>
       <div class="border-top">
+        <a class="haciaArriba h3" href="#navbar">Ir hacia arriba</a>
         <p>Gracias por visitarnos.</p>
       </div>
     </footer>

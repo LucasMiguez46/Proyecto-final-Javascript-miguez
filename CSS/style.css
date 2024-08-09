@@ -83,6 +83,7 @@ body {
   --tipo-h1: 25px;
   --tipo-navGrande: 30px;
   --tipo-imagen-carrito: 48px;
+  --tipo-imagen-carrito-media: 80%;
 }
 /* ==Fin Declaro posibles variables para CSS== */
 
@@ -144,6 +145,15 @@ h1{
   justify-content: center;
 }
 
+.tituloPrincipal{
+  font-size: 40px;
+  text-decoration:underline;
+}
+
+.haciaArriba{
+  text-decoration:underline;
+}
+
 .ajustesHeader{
   display: flex;
   align-items: center;
@@ -195,4 +205,17 @@ footer{
   background-attachment: fixed;
   overflow: hidden;
   padding-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .extranav a{
+    display: flex;
+    flex-direction: row;
+    font-size: 23px;
+    padding: 5px;
+  }
+
+  .tituloPrincipal{
+    font-size: 21px;
+  }
 }
