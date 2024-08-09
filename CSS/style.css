@@ -211,11 +211,11 @@ footer{
   .extranav a{
     display: flex;
     flex-direction: row;
-    font-size: 23px;
+    font-size: 20px;
     padding: 5px;
   }
 
   .tituloPrincipal{
-    font-size: 21px;
+    font-size: 17px;
   }
 }
