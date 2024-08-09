@@ -218,4 +218,8 @@ footer{
   .tituloPrincipal{
     font-size: 17px;
   }
+
+  .conteiner{
+    width: 100%;
+  }
 }
