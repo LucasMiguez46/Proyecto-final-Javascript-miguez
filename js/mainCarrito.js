@@ -14,7 +14,7 @@ function renderCarrito() {
         <td class="text-decoration-underline">Imagen de referencia:</td>
         <td class="text-decoration-underline">Nombre del producto:</td>
         <td class="text-center text-decoration-underline">Precio:</td>
-        <td class="text-end" colspan="4"><button class="btn btn-danger btn-lg" onclick="listaVaciada()">Vaciar Carrito <i class="bi bi-trash"></i></button></td>
+        <td class="text-end" colspan="4"><button class="btn btn-dark btn-lg" onclick="listaVaciada()">Vaciar Carrito <i class="bi bi-trash"></i></button></td>
         </tr>`;
         for (const producto of carrito) {
             contenidoHTML += 
@@ -41,7 +41,7 @@ function renderCarrito() {
         }
         contenidoHTML += 
         `<tr>
-            <td class="text-end" colspan="4">Precio total: ${precioTotal}</td>
+            <td class="text-end" colspan="4">Precio total: ${precioTotal} <button class="btn btn-success btn-lg" onclick="compraAceptada()">Comprar</button></td>
         </tr>
         </tbody>
             </table>`;

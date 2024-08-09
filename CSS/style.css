@@ -75,6 +75,8 @@ body {
   --blanco: rgb(250,250,250);
   --pastel-color: #928dd8;
 
+  --pastel-color-opacity: rgb(146, 141, 216, 0.75);
+
   /* ==font personalizados== */
   --tipo-principal: 20px;
   --tipo-secundario: 16px;
@@ -181,4 +183,16 @@ footer{
   select{
     border: 2px solid var(--negro);
   }
+}
+
+.conteiner{
+  /* background-image: url(../assets/images/fondo-inicio.webp); */
+  background: linear-gradient(145deg,var(--pastel-color-opacity), var(--blanco)), url(../assets/images/fondo-inicio.webp);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-attachment: fixed;
+  overflow: hidden;
+  padding-top: 10px;
 }

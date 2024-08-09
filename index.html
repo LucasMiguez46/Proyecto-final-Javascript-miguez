@@ -51,45 +51,49 @@
 
         <h1 class="justify-content-center" id="productos">Simulador de heladeria online</h1>
 
-        <section class="reglas">
-          <h2>algunos concejos:</h2>
-          <ul>
-            <li>Para agregar al carrito solo presione el boton "agregar".</li>
-            <li>Si compra mas de 3 productos se le aplicara un 10% de descuento.</li>
-            <li>Para eliminar un producto del carrito solo debe presionar el boton eliminar. (tambien puede vaciar el carrito)</li>
-            <li>Si la compra supera los $20.000 Arg se aplicara otro 10% de descuento.</li>
-          </ul>
+        <section class="my-5">
+          <section class="reglas">
+            <h2>algunos concejos:</h2>
+            <ul>
+              <li>Para agregar al carrito solo presione el boton "agregar".</li>
+              <li>Si compra mas de 3 productos se le aplicara un 10% de descuento.</li>
+              <li>Para eliminar un producto del carrito solo debe presionar el boton eliminar. (tambien puede vaciar el carrito)</li>
+              <li>Si la compra supera los $20.000 Arg se aplicara otro 10% de descuento.</li>
+            </ul>
+          </section>
+          
+          <div class="text-center opcion">
+            <h3 class="h2 ">Elija la opcion de orden que desee:</h3>
+
+            <div class="row">
+              <h4 class="h3 my-3">Por categoria:</h4>
+              <select id="categoryOptions" onchange="filterAndSortProductos()" class="text-center">
+                <option value="Todas">Todas</option>
+                <option value="cono">cono</option>
+                <option value="palito">palito</option>
+                <option value="pote">pote</option>
+              </select>
+    
+              <h4 class="h3 my-3">Por precio:</h4>
+              <select name="" id="sortOptions" onchange="filterAndSortProductos()" class="text-center">
+                <option value="default">Default</option>
+                <option value="Menor a Mayor">Menor a Mayor</option>
+                <option value="Mayor a Menor">Mayor a Menor</option>
+              </select>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="conteiner">
+          <div class="container my-5 ">
+            <!-- <div><h3 class="h2 border-bottom">Seccion de conos:</h3></div> -->
+            <div id="contenido" class="row"></div>
+          </div>   
         </section>
         
-        <div class="text-center opcion">
-          <h3 class="h2 ">Elija la opcion de orden que desee:</h3>
-
-          <div class="row">
-            <h4 class="h3 my-3">Por categoria:</h4>
-            <select id="categoryOptions" onchange="filterAndSortProductos()" class="text-center">
-              <option value="Todas">Todas</option>
-              <option value="cono">cono</option>
-              <option value="palito">palito</option>
-              <option value="pote">pote</option>
-            </select>
-  
-            <h4 class="h3 my-3">Por precio:</h4>
-            <select name="" id="sortOptions" onchange="filterAndSortProductos()" class="text-center">
-              <option value="default">Default</option>
-              <option value="Menor a Mayor">Menor a Mayor</option>
-              <option value="Mayor a Menor">Mayor a Menor</option>
-            </select>
-          </div>
-
-        </div>
-
-        <div class="container my-5">
-          <!-- <div><h3 class="h2 border-bottom">Seccion de conos:</h3></div> -->
-          <div id="contenido" class="row"></div>
-        </div> 
-
         <!-- // -->
-        <h2 class="ajustesHeader h1" id="carrito">Bienvenidos al carrito!</h2>
+        <h2 class="ajustesHeader h1 my-5" id="carrito">Bienvenidos al carrito!</h2>
 
         <div class="container my-5">
           <div id="contenido2" class="row"></div>
