@@ -41,7 +41,7 @@ function renderCarrito() {
         }
         contenidoHTML += 
         `<tr>
-            <td class="text-end" colspan="4">Precio total: ${precioTotal} <button class="btn btn-outline-success btn-lg" onclick="compraAceptada()">Comprar</button></td>
+            <td class="text-end" colspan="4">Precio total: ${precioTotal} <button class="btn btn-outline-success btn-lg" onclick="compraAceptada(), compraAceptadaAsincronica()">Comprar</button></td>
         </tr>
         </tbody>
             </table>`;

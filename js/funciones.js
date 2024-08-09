@@ -6,6 +6,8 @@ const productosJson = [
     {id:5, nombre:"Pote de helado 1/4", descripcion:"pote de helado de 1/4" , precio: 4500, imagen:"ice-cream-reference-4.png", categoria:"pote"},
     {id:6, nombre:"Pote de helado 1/2", descripcion:"pote de helado de 1/2" , precio: 7000, imagen:"ice-cream-reference-4.png", categoria:"pote"},
     {id:7, nombre:"Pote de helado 1 Kilo", descripcion:"pote de helado de 1 kilo" , precio: 9000, imagen:"ice-cream-reference-4.png", categoria:"pote"},
+    {id:8, nombre:"Milk-shake", descripcion:"malteada a gusto del cliente" , precio: 6000, imagen:"ice-cream-reference-6.png", categoria:"milk-shake"},
+
 ]
 
 //===========================================
@@ -222,4 +224,34 @@ function compraAceptada() {
       console.log("I was closed by the timer");
     }
   });
+
+  
+}
+
+async function compraAceptadaAsincronica() {
+  return new Promise((resolve, reject) => {
+    // Simular una demora en la respuesta
+    setTimeout(() => {
+      // Obtener productos del localStorage
+      const valor = true;
+      
+      if (valor) {
+        resolve(    
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Su compra ah sido aceptada",
+            showConfirmButton: false,
+            timer: 1200
+          })
+        );
+
+        //simulo que al terminar de comprar se resetea para una nueva lista de carrito.
+        vaciarCarrito();
+      } else {
+        reject('No se encontraron productos');
+      }
+    }, 2000); // 1000 ms de demora simulada
+  });
+
 }
